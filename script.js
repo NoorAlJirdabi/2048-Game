@@ -70,6 +70,30 @@ document.addEventListener('DOMContentLoaded', () => {
     scoreDisplay.textContent = score
   }
 
+  const slide = (row) => {
+    const filteredRow = row.filter((val) => val !== 0)
+    while (filteredRow.length < 4) {
+      filteredRow.push(0)
+    }
+    return filteredRow
+  }
+
+  const combine = (row) => {
+    for (let i = 0; i < 3; i++) {
+      if (row[i] === row[i + 1] && row[i] !== 0) {
+        row[i] = row[i] * 2
+        row[i + 1] = 0
+        score += row[i]
+
+        if (row[i] === 2048) {
+          gameWon = true
+          statusMessage.textContent = 'You win!'
+        }
+      }
+    }
+    return row
+  }
+
   newButton.addEventListener('click', startGame)
 
   startGame()
