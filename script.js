@@ -36,6 +36,40 @@ document.addEventListener('DOMContentLoaded', () => {
     addNewTile()
   }
 
+  const addNewTile = () => {
+    let emptyTiles = []
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        if (grid[i][j] === 0) {
+          emptyTiles.push({ x: i, y: j })
+        }
+      }
+    }
+    if (emptyTiles.length > 0) {
+      const { x, y } = emptyTiles[Math.floor(Math.random() * emptyTiles.length)]
+      grid[x][y] = Math.random() < 0.9 ? 2 : 4
+      updateBoard()
+    }
+  }
+
+  const updateBoard = () => {
+    board.innerHTML = ''
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 4; j++) {
+        const tile = document.createElement('div')
+        tile.classList.add('tile')
+        const value = grid[i][j]
+
+        if (value) {
+          tile.textContent = value
+          tile.classList.add(`tile-${value}`)
+        }
+        board.appendChild(tile)
+      }
+    }
+    scoreDisplay.textContent = score
+  }
+
   newButton.addEventListener('click', startGame)
 
   startGame()
