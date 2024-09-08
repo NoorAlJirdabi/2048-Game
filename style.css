@@ -1,0 +1,155 @@
+body {
+  height: 100vh;
+  margin: 0;
+  background-color: #819171;
+  text-align: center;
+  color: #dfe6da;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+#game-container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #dfe6da;
+}
+
+#score,
+#new-game-btn {
+  background-color: #dfe6da;
+  border: none;
+  width: 16vw;
+  height: 8vh;
+  border-radius: 8px;
+  color: #3a5a40;
+  font-size: 16px;
+}
+
+#new-game-btn {
+  cursor: pointer;
+}
+
+#score {
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+#score-new {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+#game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  width: 400px;
+  height: 400px;
+  background-color: #9caf88;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+.tile {
+  background-color: #cbd5c0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #3a5a40;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+#status-message {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #776e65;
+}
+
+.tile-2 {
+  background-color: #e0f7da;
+  color: #3a5a40;
+}
+
+.tile-4 {
+  background-color: #c8e6c9;
+  color: #3a5a40;
+}
+
+.tile-8 {
+  background-color: #a5d6a7;
+  color: #3a5a40;
+}
+
+.tile-16 {
+  background-color: #e0f0e3;
+  color: #3a5a40;
+}
+
+.tile-32 {
+  background-color: #d2e7d6;
+  color: #3a5a40;
+}
+
+.tile-64 {
+  background-color: #c8e1cc;
+  color: #3a5a40;
+}
+
+.tile-128 {
+  background-color: #b8d8be;
+  color: #3a5a40;
+}
+
+.tile-256 {
+  background-color: #add0b3;
+  color: #3a5a40;
+}
+
+.tile-512 {
+  background-color: #dde8e4;
+  color: #3a5a40;
+}
+
+.tile-1024 {
+  background-color: #d0e0dd;
+  color: #3a5a40;
+}
+
+.tile-2048 {
+  background-color: #bdcfc9;
+  color: #3a5a40;
+}
+
+.tile.moved {
+  transition: transform 0.3s ease-in-out;
+}
+
+.tile.merged {
+  animation: pop 0.2s;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
