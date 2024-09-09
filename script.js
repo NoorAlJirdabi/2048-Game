@@ -100,6 +100,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return slide(combineRow)
   }
 
+  const moveLeft = () => {
+    for (let i = 0; i < 4; i++) {
+      grid[i] = slideAndCombine(grid[i])
+    }
+  }
+
+  const moveRight = () => {}
+
+  const moveDown = () => {}
+
   const checkGameOver = () => {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
