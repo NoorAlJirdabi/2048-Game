@@ -118,6 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return true
   }
 
+  document.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'ArrowUp':
+        move('up')
+        break
+      case 'ArrowDown':
+        move('down')
+        break
+      case 'ArrowLeft':
+        move('left')
+        break
+      case 'ArrowRight':
+        move('right')
+        break
+    }
+  })
+
   newButton.addEventListener('click', startGame)
 
   startGame()
