@@ -3,11 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.querySelector('#score-value')
   const newButton = document.querySelector('#new-game-btn')
   const statusMessage = document.querySelector('#status-message')
+  const undoButton = document.querySelector('#undo-btn')
 
   let grid = []
   let score = 0
   let gameWon = false
   let gameOver = false
+  let previousGrid = []
+  let previousScore = 0
 
   const createGrid = () => {
     const grid = []
@@ -57,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
         const tile = document.createElement('div')
-        tile.classList.add('tile')
+        tile.classList.add('tile', 'new', 'merged')
         const value = grid[i][j]
 
         if (value) {
@@ -157,18 +160,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let moved = false
     switch (direction) {
       case 'left':
+        savePreviousState()
         moveLeft()
         moved = true
         break
       case 'right':
+        savePreviousState()
         moveRight()
         moved = true
         break
       case 'up':
+        savePreviousState()
         moveUp()
         moved = true
         break
       case 'down':
+        savePreviousState()
         moveDown()
         moved = true
         break
@@ -180,6 +187,19 @@ document.addEventListener('DOMContentLoaded', () => {
         gameOver = true
         statusMessage.textContent = 'Game Over!'
       }
+    }
+  }
+
+  const savePreviousState = () => {
+    previousGrid = grid.map((row) => [...row])
+    previousScore = score
+  }
+
+  const undoMove = () => {
+    if (previousGrid.length) {
+      grid = previousGrid.map((row) => [...row])
+      score = previousScore
+      updateBoard()
     }
   }
 
@@ -201,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   newButton.addEventListener('click', startGame)
+  undoButton.addEventListener('click', undoMove)
 
   startGame()
 })

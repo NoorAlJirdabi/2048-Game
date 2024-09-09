@@ -22,7 +22,8 @@ a {
 }
 
 #score,
-#new-game-btn {
+#new-game-btn,
+#undo-btn {
   background-color: #dfe6da;
   border: none;
   width: 16vw;
@@ -70,7 +71,7 @@ a {
   font-weight: bold;
   color: #3a5a40;
   border-radius: 6px;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.1s ease, background-color 0.07s;
 }
 
 #status-message {
@@ -78,6 +79,35 @@ a {
   font-size: 24px;
   color: #776e65;
 }
+
+/* .tile.new {
+  animation: pop-in 0.03s;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+/* .tile.merged {
+  animation: merge-pop 0.1s;
+}
+
+@keyframes merge-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
 
 .tile-2 {
   background-color: #e0f7da;
@@ -133,23 +163,3 @@ a {
   background-color: #bdcfc9;
   color: #3a5a40;
 }
-
-/* .tile.moved {
-  transition: transform 0.3s ease-in-out;
-}
-
-.tile.merged {
-  animation: pop 0.2s;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
