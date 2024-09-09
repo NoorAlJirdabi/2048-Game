@@ -118,6 +118,39 @@ document.addEventListener('DOMContentLoaded', () => {
     return true
   }
 
+  const move = (direction) => {
+    if (gameOver || gameWon) {
+      return true
+    }
+    let moved = false
+    switch (direction) {
+      case 'left':
+        moveLeft()
+        moved = true
+        break
+      case 'right':
+        moveRight()
+        moved = true
+        break
+      case 'up':
+        moveUp()
+        moved = true
+        break
+      case 'down':
+        moveDown()
+        moved = true
+        break
+    }
+
+    if (moved) {
+      addNewTile()
+      if (checkGameOver()) {
+        gameOver = true
+        statusMessage.textContent = 'Game Over!'
+      }
+    }
+  }
+
   document.addEventListener('keydown', (e) => {
     switch (e.key) {
       case 'ArrowUp':
