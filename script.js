@@ -2,8 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const board = document.querySelector('#game-board')
   const scoreDisplay = document.querySelector('#score-value')
   const newButton = document.querySelector('#new-game-btn')
-  const statusMessage = document.querySelector('#status-message')
   const undoButton = document.querySelector('#undo-btn')
+  const modal = document.getElementById('game-over-modal')
+  const modalMessage = document.getElementById('modal-message')
+  const restartButton = document.getElementById('restart-btn')
+  const timerDisplay = document.getElementById('timer-value') // Timer Display
 
   let grid = []
   let score = 0
@@ -11,20 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let gameOver = false
   let previousGrid = []
   let previousScore = 0
+  let timeLeft = 120
+  let timerInterval
 
   const createGrid = () => {
     const grid = []
-
     for (let row = 0; row < 4; row++) {
       const newRow = []
-
       for (let col = 0; col < 4; col++) {
         newRow.push(0)
       }
-
       grid.push(newRow)
     }
-
     return grid
   }
 
@@ -33,7 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 0
     gameWon = false
     gameOver = false
-    statusMessage.textContent = ''
+    timeLeft = 120
+    timerDisplay.textContent = timeLeft
+    hideModal()
+    startTimer()
     updateBoard()
     addNewTile()
     addNewTile()
@@ -90,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (row[i] === 2048) {
           gameWon = true
-          statusMessage.textContent = 'You Win!'
+          showModal('You Win!')
         }
       }
     }
@@ -149,7 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     }
-
     return true
   }
 
@@ -185,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
       addNewTile()
       if (checkGameOver()) {
         gameOver = true
-        statusMessage.textContent = 'Game Over!'
+        showModal('Game Over!')
+        stopTimer()
       }
     }
   }
@@ -201,6 +205,33 @@ document.addEventListener('DOMContentLoaded', () => {
       score = previousScore
       updateBoard()
     }
+  }
+
+  const showModal = (message) => {
+    modalMessage.textContent = message
+    modal.classList.remove('hidden')
+    stopTimer()
+  }
+
+  const hideModal = () => {
+    modal.classList.add('hidden')
+  }
+
+  const startTimer = () => {
+    timerInterval = setInterval(() => {
+      timeLeft--
+      timerDisplay.textContent = timeLeft
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval)
+        showModal('Time Up! Game Over!')
+        gameOver = true
+      }
+    }, 1000)
+  }
+
+  const stopTimer = () => {
+    clearInterval(timerInterval)
   }
 
   document.addEventListener('keydown', (e) => {
@@ -222,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   newButton.addEventListener('click', startGame)
   undoButton.addEventListener('click', undoMove)
+  restartButton.addEventListener('click', startGame)
 
   startGame()
 })
