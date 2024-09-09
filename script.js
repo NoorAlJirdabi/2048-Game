@@ -110,6 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const moveDown = () => {}
 
+  const moveUp = () => {
+    for (let i = 0; i < 4; i++) {
+      let column = [grid[0][i], grid[1][i], grid[2][i], grid[3][i]]
+      let newColumn = slideAndCombine(column)
+      for (let j = 0; j < 4; j++) {
+        grid[j][i] = newColumn[j]
+      }
+    }
+  }
+
   const checkGameOver = () => {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 4; j++) {
