@@ -3,10 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./guideStyle.css">
   <title>Guidlines</title>
 </head>
 <body>
-  <h1>hello</h1>
+  <div class="container">
+    <h1>2048 Game Guidelines</h1>
+
+    <h2>Objective</h2>
+    <p>The goal of 2048 is to combine tiles with the same numbers by sliding them across the board until you reach the tile with the value <strong>2048</strong>. Once you create the 2048 tile, you win the game!</p>
+
+    <h2>How to Play</h2>
+    <p>Use the following keyboard controls to move the tiles:</p>
+    <ul>
+      <li><strong>Arrow Up (↑)</strong>: Slide all tiles upward.</li>
+      <li><strong>Arrow Down (↓)</strong>: Slide all tiles downward.</li>
+      <li><strong>Arrow Left (←)</strong>: Slide all tiles to the left.</li>
+      <li><strong>Arrow Right (→)</strong>: Slide all tiles to the right.</li>
+    </ul>
+
+    <p>When two tiles with the same number collide, they merge into a new tile with the sum of their values. For example, two tiles with the value <strong>4</strong> will merge to become a tile with the value <strong>8</strong>.</p>
+
+    <h2>Rules</h2>
+    <ul>
+      <li>You can only merge tiles with the same value.</li>
+      <li>The game ends when there are no more valid moves or when the board is completely filled with tiles and no merges can be made.</li>
+      <li>Once you create a tile with a value of <strong>2048</strong>, you win, but you can continue to play to increase your score.</li>
+    </ul>
+
+    <h2>Scoring</h2>
+    <p>Your score is the sum of the values of the tiles you merge. </p>
+
+    <h2>Tips & Strategies</h2>
+    <ul>
+      <li>Plan your moves ahead to avoid filling up the board too quickly.</li>
+      <li>Try to keep the highest tile in one corner of the board to avoid scattering it.</li>
+      <li>Don’t focus solely on creating the 2048 tile – keep your tiles organized to leave space for future moves.</li>
+      <li>Always look for opportunities to merge tiles in multiple directions to create more space on the board.</li>
+    </ul>
+
+    <h2>Game Features</h2>
+    <ul>
+      <li><strong>Undo:</strong> You can undo your last move if you make a mistake.</li>
+      <li><strong>Timer Mode:</strong> Race against the clock to score as high as possible before time runs out!</li>
+      <li><strong>New Game:</strong> Restart the game anytime by pressing the "New Game" button.</li>
+    </ul>
+
+    <a href="index.html" class="back-link">← Back to Game</a>
+  </div>
 </body>
 </html>
 

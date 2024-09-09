@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('game-over-modal')
   const modalMessage = document.getElementById('modal-message')
   const restartButton = document.getElementById('restart-btn')
-  const timerDisplay = document.getElementById('timer-value') // Timer Display
+  const timerDisplay = document.getElementById('timer-value')
 
   let grid = []
   let score = 0
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let gameOver = false
   let previousGrid = []
   let previousScore = 0
-  let timeLeft = 120
+  let timeLeft = 300
   let timerInterval
 
   const createGrid = () => {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     score = 0
     gameWon = false
     gameOver = false
-    timeLeft = 120
+    timeLeft = 300
     timerDisplay.textContent = timeLeft
     hideModal()
     startTimer()
