@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (row[i] === 2048) {
           gameWon = true
-          statusMessage.textContent = 'You win!'
+          statusMessage.textContent = 'You Win!'
         }
       }
     }
@@ -106,7 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  const moveRight = () => {}
+  const moveRight = () => {
+    for (let i = 0; i < 4; i++) {
+      grid[i] = slideAndCombine(grid[i].slice().reverse()).reverse()
+    }
+  }
 
   const moveDown = () => {
     for (let i = 0; i < 4; i++) {
