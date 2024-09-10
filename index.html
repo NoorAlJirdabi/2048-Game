@@ -9,21 +9,27 @@
 </head>
 <body>
   <h1>2048 Game</h1>
+  
   <div class="newPage">
-    <p>Want to know more about the game? <a href="./guidlines.html">Click here</a>!</p>
+    <p>Want to know more about the game? <a href="./guidlines.html">Click here</a><strong>!</strong></p>
   </div>
+  
   <div id="game-container">
     <div id="score-new">
-      <div class="left">
-      <div id="score">Score: <span id="score-value">0</span></div>
-      <div id="high-score">Best Score: <span id="high-score-value">0</span></div>
-    </div>
-      <div class="right">
-      <button id="new-game-btn">Start Game</button>
-      <button id="undo-btn">Undo Move</button>
+      <div id="left">
+        <div id="score">Score: <span id="score-value">0</span></div>
+        <div id="high-score">Best Score: <span id="high-score-value">0</span></div>
+      </div>
+
+      <div id="right">
+        <button id="new-game-btn">Start Game</button>
+        <button id="undo-btn">Undo Move</button>
+      </div>
+
+  
     </div>
     <div id="timer">Time Left: <span id="timer-value">300</span></div>
-    </div>
+
     <div id="game-board"></div>
   </div>
 

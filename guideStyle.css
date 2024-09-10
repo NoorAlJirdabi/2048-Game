@@ -1,7 +1,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #819171;
-  color: #dfe6da;
+  background-color: #3d5361;
+  color: #3d5361;
   padding: 20px;
   margin: 0;
   line-height: 1.6;
@@ -15,7 +15,7 @@ h1 {
 
 h2 {
   font-size: 28px;
-  color: #f0e9d2;
+  color: #835463;
 }
 
 p {
@@ -29,7 +29,7 @@ ul {
 }
 
 a {
-  color: #e0f7da;
+  color: #835463;
   text-decoration: none;
   font-weight: bold;
 }
@@ -37,7 +37,7 @@ a {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  background-color: #3a5a40;
+  background-color: #d4c6bd;
   padding: 20px;
   border-radius: 10px;
 }
