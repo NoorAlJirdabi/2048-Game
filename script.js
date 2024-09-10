@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const board = document.querySelector('#game-board')
   const scoreDisplay = document.querySelector('#score-value')
+  const highScoreDisplay = document.querySelector('#high-score-value')
   const newButton = document.querySelector('#new-game-btn')
   const undoButton = document.querySelector('#undo-btn')
   const modal = document.getElementById('game-over-modal')
@@ -10,12 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let grid = []
   let score = 0
+  let highScore = localStorage.getItem('highScore') || 0
   let gameWon = false
   let gameOver = false
   let previousGrid = []
   let previousScore = 0
   let timeLeft = 300
   let timerInterval
+
+  highScoreDisplay.textContent = highScore
 
   const createGrid = () => {
     const grid = []
@@ -91,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
         row[i] = row[i] * 2
         row[i + 1] = 0
         score += row[i]
+
+        updateHighScore()
 
         if (row[i] === 2048) {
           gameWon = true
@@ -232,6 +238,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const stopTimer = () => {
     clearInterval(timerInterval)
+  }
+
+  const updateHighScore = () => {
+    if (score > highScore) {
+      highScore = score
+      localStorage.setItem('highScore', highScore)
+      highScoreDisplay.textContent = highScore
+    }
   }
 
   document.addEventListener('keydown', (e) => {
