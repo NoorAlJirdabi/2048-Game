@@ -2,9 +2,13 @@ body {
   height: 100vh;
   margin: 0;
   /* background-color: #f5f0ed; */
-  background-color: #e4ddd8cc;
+  /* background-color: #e4ddd8cc; */
+  /* background-color: #d1bab0; */
+  /* background-color: #819171; */
+  background-color: #8c9a7f;
   text-align: center;
-  color: #3d5361;
+  /* color: #835463; */
+  color: #dfe6da;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -28,8 +32,10 @@ h1 {
   height: 90vw;
   max-height: 500px;
   padding: 2vw;
-  border-radius: 6px;
+  border-radius: 10px;
   margin: 0 auto;
+  background-color: #e4ddd89d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #score-new {
@@ -57,11 +63,12 @@ h1 {
   width: 14vw;
   /* background-color: #d4c6bd; */
   background-color: #f5f0ed;
-  color: #835463;
+  color: #673a48;
   margin-bottom: 10px;
   padding: 10px;
   font-weight: bold;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 #right {
@@ -80,12 +87,18 @@ h1 {
   /* background-color: #d4c6bd; */
   background-color: #f5f0ed;
   /* color: #3d5361; */
-  color: #835463;
+  color: #673a48;
   border: none;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+#new-game-btn:hover,
+#undo-btn:hover {
+  background-color: #d4c6bd;
 }
 
 #timer {
@@ -96,10 +109,6 @@ h1 {
   margin-bottom: 15px;
 }
 
-#game-board {
-  background-color: #d1bab0;
-}
-
 .tile {
   /* background-color: #d4c6bd78; */
   background-color: #f5f0ed63;
@@ -108,56 +117,62 @@ h1 {
   align-items: center;
   font-size: 6vw;
   font-weight: bold;
-  color: #835463;
+  color: #673a48;
   border-radius: 6px;
+  transition: transform 0.2s ease;
+}
+
+.tile:hover {
+  transform: scale(1.05);
 }
 
 .tile-2 {
-  background-color: #f9e9e9;
+  background-color: #ede8e7;
+  color: #c07b7b;
 }
 
 .tile-4 {
-  background-color: #f4d4d4;
+  background-color: #d6c6c4;
+  color: #c07b7b;
 }
 
 .tile-8 {
-  background-color: #f0bfbf;
+  background-color: #cda9a7;
+  color: #f5f0ed;
 }
 
 .tile-16 {
-  background-color: #c28b93;
+  background-color: #c49091;
+  color: #f5f0ed;
 }
 
 .tile-32 {
-  background-color: #e29f9f;
+  background-color: #a67071;
+  color: #f5f0ed;
 }
 
 .tile-64 {
-  background-color: #d08d8d;
+  background-color: #8c5a5a;
+  color: #f5f0ed;
 }
-
 .tile-128 {
-  background-color: #c07b7b;
+  background-color: #7b4c4b;
   color: #f5f0ed;
 }
-
 .tile-256 {
-  background-color: #b56969;
+  background-color: #694141;
   color: #f5f0ed;
 }
-
 .tile-512 {
-  background-color: #a45757;
+  background-color: #5b3635;
   color: #f5f0ed;
 }
-
 .tile-1024 {
-  background-color: #8d3f3f;
+  background-color: #4b2928;
   color: #f5f0ed;
 }
-
 .tile-2048 {
-  background-color: #6e2c2c;
+  background-color: #3c1f1e;
   color: #f5f0ed;
 }
 
@@ -171,12 +186,13 @@ h1 {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #f5f0ed;
-  color: #835463;
+  color: #673a48;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   width: 80vw;
   max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content {
@@ -187,17 +203,27 @@ h1 {
 
 #restart-btn {
   background-color: #d4c6bd;
-  color: #835463;
+  color: #673a48;
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
   margin-top: 10px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#restart-btn:hover {
+  background-color: #bfaea0;
 }
 
 a {
   text-decoration: none;
-  color: #3d5361;
+  color: #673a48;
+  font-weight: bold;
+}
+
+strong {
+  color: #673a48;
   font-weight: bold;
 }
 
@@ -283,12 +309,44 @@ a {
 
 /* For very large screens (desktops and large monitors) */
 @media only screen and (min-width: 1200px) {
-  #game-board {
-    width: 90vw;
-    height: 90vw;
+  h1 {
+    font-size: 4vw;
+  }
+
+  p {
+    font-size: 1.5vw;
   }
 
   .tile {
-    font-size: 2vw;
+    font-size: 1.8vw;
+  }
+
+  #game-board {
+    width: 75vw;
+    height: 75vw;
+  }
+
+  #new-game-btn,
+  #undo-btn {
+    font-size: 1vw;
+    width: 15vw;
+  }
+
+  #score,
+  #high-score {
+    font-size: 1vw;
+    width: 10vw;
+  }
+
+  #timer {
+    font-size: 1.8vw;
+  }
+
+  .modal {
+    width: 30vw;
+  }
+
+  #restart-btn {
+    font-size: 1vw;
   }
 }
