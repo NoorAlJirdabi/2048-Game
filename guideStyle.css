@@ -1,6 +1,7 @@
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Arvo', serif;
+  font-weight: 400;
+  font-style: normal;
   background-color: #8c9a7f;
   color: #9e6c6d;
   padding: 20px;
