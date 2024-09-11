@@ -13,7 +13,7 @@ h1 {
 }
 
 #game-container {
-  width: 90vw;
+  width: 100vw;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -23,12 +23,12 @@ h1 {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1vw;
   width: 90vw;
-  max-width: 500px;
+  max-width: 600px;
   height: 90vw;
-  max-height: 500px;
+  max-height: 600px;
   padding: 2vw;
   border-radius: 10px;
-  margin: 0 auto;
+  margin-left: -7vw;
   background-color: #e4ddd89d;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -233,6 +233,7 @@ strong {
   #game-board {
     width: 75vw;
     height: 75vw;
+    margin: 0 auto;
   }
 
   #new-game-btn,
@@ -261,7 +262,7 @@ strong {
 }
 
 /* For larger screens (tablets and desktops) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   h1 {
     font-size: 6vw;
   }
