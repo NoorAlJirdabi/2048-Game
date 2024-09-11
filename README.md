@@ -4,7 +4,7 @@
 
 ### By: Noor Aljirdabi
 
-### [Github](https://github.com/NoorAlJirdabi) | [LinkedIn](https://www.linkedin.com/in/noor-aljirdabi-496121257/) | [Game](little-metal.surge.sh)
+### [Github](https://github.com/NoorAlJirdabi) | [LinkedIn](https://www.linkedin.com/in/noor-aljirdabi-496121257/) | [Game](https://certain-whistle.surge.sh/index.html)
 
 ---
 
