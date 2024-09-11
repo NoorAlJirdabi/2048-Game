@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let timeLeft = 300
   let timerInterval
 
+  let touchStartX = 0
+  let touchStartY = 0
+  let touchEndX = 0
+  let touchEndY = 0
+
   highScoreDisplay.textContent = highScore
 
   const createGrid = () => {
@@ -248,6 +253,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const handleGesture = () => {
+    const diffX = touchEndX - touchStartX
+    const diffY = touchEndY - touchStartY
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+      if (diffX > 0) {
+        move('right')
+      } else {
+        move('left')
+      }
+    } else {
+      if (diffY > 0) {
+        move('down')
+      } else {
+        move('up')
+      }
+    }
+  }
+
   document.addEventListener('keydown', (e) => {
     switch (e.key) {
       case 'ArrowUp':
@@ -263,6 +287,17 @@ document.addEventListener('DOMContentLoaded', () => {
         move('right')
         break
     }
+  })
+
+  board.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX
+    touchStartY = e.changedTouches[0].screenY
+  })
+
+  board.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX
+    touchEndY = e.changedTouches[0].screenY
+    handleGesture()
   })
 
   newButton.addEventListener('click', startGame)
