@@ -21,3 +21,33 @@ Project 1 for General Assembly bootcamp, A sliding tile puzzle game is called 20
  <img src="wireframe.png" alt="wireframe">
 
 ---
+
+### **_Technologies Used_**
+
+- Javascript
+- Html
+- Css
+
+---
+
+---
+
+### **_Screenshots_**
+
+##### Main Page
+
+ <img src="mainpage.png" alt="main page">
+
+##### Guidlines Page
+
+ <img src="guidelines.png" alt="guidlines page">
+
+---
+
+### **_Future Updates_**
+
+- [ ] Multiplayer Mode
+- [ ] Daily Challenges
+- [ ] Save and Resume Game Progress
+
+---
