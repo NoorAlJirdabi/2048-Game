@@ -1,5 +1,5 @@
 body {
-  font-family: 'Arvo', serif;
+  font-family: 'Luckiest Guy', cursive;
   font-weight: 400;
   font-style: normal;
   background-color: #8c9a7f;
@@ -13,7 +13,7 @@ h1 {
   font-size: 36px;
   text-align: center;
   margin-bottom: 20px;
-  color: rgb(248, 243, 243);
+  color: #835463;
 }
 
 strong {
@@ -26,19 +26,25 @@ h2 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 10px;
+  font-family: 'Nerko One', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 ul {
-  font-size: 18px;
+  font-size: 20px;
   margin-left: 20px;
+  font-family: 'Nerko One', cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 
 a {
   color: #835463;
   text-decoration: none;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .container {
