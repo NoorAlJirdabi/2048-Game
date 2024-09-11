@@ -42,6 +42,14 @@ Project 1 for General Assembly bootcamp, A sliding tile puzzle game is called 20
 
  <img src="guidelines.png" alt="guidlines page">
 
+##### GameOver Modal
+
+ <img src="gameover.png" alt="gameover page">
+
+##### TimeOver Modal
+
+ <img src="timeover.png" alt="timeover page">
+
 ---
 
 ### **_Future Updates_**

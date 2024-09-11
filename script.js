@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (row[i] === 2048) {
           gameWon = true
-          showModal('You Win!')
+          showModal("Congratulations! You're the champion!")
         }
       }
     }
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addNewTile()
       if (checkGameOver()) {
         gameOver = true
-        showModal('Game Over!')
+        showModal('Better luck next time!')
         stopTimer()
       }
     }
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (timeLeft <= 0) {
         clearInterval(timerInterval)
-        showModal('Time Up! Game Over!')
+        showModal("Time's up! The game is over!")
         gameOver = true
       }
     }, 1000)
